@@ -124,7 +124,7 @@ router.post('/post', function(req,res){
     newPost.price = req.body.price;
     newPost.save(function(err,insertedPost){
         if(err){
-            console.log('Error saving video');
+            console.log('Error saving  post');
         
         
         }else{
@@ -152,6 +152,7 @@ router.put('/post/:id',function(req,res){
 
         }else{
             res.json(updatedPost);
+            console.log("update success")
         }
     }
     );

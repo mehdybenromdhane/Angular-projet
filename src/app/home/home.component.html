@@ -1,1 +1,10 @@
-<p>home works!</p>
+<div class="row">
+    <div class="col-sm-9">
+        <app-post-details *ngIf="selectedPost" [post]="selectedPost"  (deletePostEvent)="onDeleteEvent($event)" (updatePostEvent)="onUpdatePostEvent($event)"></app-post-details>
+    </div>
+
+    <div class="col-sm-3"> 
+
+        <app-posts-list (SelectPost)="onSelectPost($event)" [posts] = "postsList"></app-posts-list>
+    </div>
+</div> 

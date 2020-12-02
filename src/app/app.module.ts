@@ -9,14 +9,20 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
-import { TokenInterceptorService } from './services/token-interceptor.service'
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { PostsListComponent } from './posts-list/posts-list.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
+import { AddPostComponent } from './add-post/add-post.component'
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    PostsListComponent,
+    PostDetailsComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,

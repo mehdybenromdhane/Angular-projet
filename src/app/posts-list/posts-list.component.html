@@ -1,0 +1,10 @@
+
+
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item" type="button" (click)="onSelect(p)"  *ngFor="let p of posts" >
+      <a class="nav-link " >{{p.title}}</a>
+    </li>
+  
+  </ul>
+
+  <a href="add" class="btn btn-primary"  > add Post </a>

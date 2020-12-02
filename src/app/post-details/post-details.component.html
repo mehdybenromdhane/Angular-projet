@@ -1,0 +1,34 @@
+
+
+
+<div>
+
+    <form> 
+
+
+        <div  *ngIf="editTitle"  class="form-group">
+
+            <input type="text" class="form-control" name="title" required placeholder="title"
+            [(ngModel)]="post.title">
+        </div>
+<h3 *ngIf="!editTitle" (click)="onTitleClick()"> {{post.title}}</h3>
+
+        <div class="form-group">
+
+            <input type="text" class="form-control" name="description" required placeholder="description"
+            [(ngModel)]="post.description">
+        </div>
+
+           
+        <div class="form-group">
+
+            <input type="text" class="form-control" name="price" required placeholder="price"
+            [(ngModel)]="post.price">
+        </div>
+
+        <button type="button" (click)="updatePost()" class="btn btn-primary">Update</button>
+        <button type="button" (click)="deletePost()" class="btn btn-secondary">Delete</button>
+
+    </form>
+
+</div>

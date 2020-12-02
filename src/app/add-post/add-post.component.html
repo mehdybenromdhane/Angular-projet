@@ -1,0 +1,33 @@
+
+
+<h1> Add post</h1>
+
+
+<form >
+
+<div class="form-group">
+    <label> title</label>
+    <input type="text" class="form-control"  name="title" [(ngModel)]="post.title">
+    </div>
+
+
+
+    <div class="form-group">
+    <label> Category</label>
+    <input type="text" class="form-control"  name="category" [(ngModel)]="post.category">
+</div>
+
+
+
+<div class="form-group">
+    <label> Description</label>
+    <input type="text" class="form-control"  name="description" [(ngModel)]="post.description">
+</div>
+<div class="form-group">
+    <label> price</label>
+    <input type="number" class="form-control"  name="price" [(ngModel)]="post.price">
+</div>
+
+
+<button type="submit" class="btn btn-primary" (click) = "save()" > save </button>
+</form>
