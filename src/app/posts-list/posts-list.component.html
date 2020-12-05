@@ -3,8 +3,10 @@
 <ul class="nav nav-pills flex-column">
     <li class="nav-item" type="button" (click)="onSelect(p)"  *ngFor="let p of posts" >
       <a class="nav-link " >{{p.title}}</a>
+
+      <img  class="img-fluid" src="../../assets/{{p.image}}">
     </li>
   
   </ul>
 
-  <a href="add" class="btn btn-primary"  > add Post </a>
+  <a href="add" class="btn btn-primary"> add Post </a>

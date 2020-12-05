@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken')
 const router = express.Router()
 const User= require ('../models/User')
 const Post= require ('../models/Posts')
+const multer = require('multer')
 
 const mongoose = require('mongoose')
 const Posts = require('../models/Posts')
@@ -112,14 +113,41 @@ router.get('/post/:id',function(req,res){
 });
 
 
-router.post('/post', function(req,res){
+const storage = multer.diskStorage({
+
+    destination: '../src/assets',
+    filename: function(req, file,cb){
+        cb(null,Date.now() + '.'+file.mimetype.split('/')[1])
+    }
+})
+
+const upload = multer({storage: storage})
+
+router.post('/upload',upload.single('file'),(req , res) =>{
+
+    console.log(req.file);
+    res.send({
+        success: true,
+        message: "file uploaded !"
+    })
+})
+
+router.post('/post', upload.single('file'),function(req,res){
+   // router.post('/post',function(req,res){
 
     console.log('post a post');
     var newPost = new Posts(); 
 
     newPost.title = req.body.title;
     newPost.category = req.body.category;
-    newPost.image = req.body.image;
+     
+    
+     console.log(req.file);
+     newPost.image = req.file.filename;
+
+     console.log(newPost.image) ;    //newPost.image = req.file.filename;
+ 
+   // console.log(req.file);
     newPost.description = req.body.description;
     newPost.price = req.body.price;
     newPost.save(function(err,insertedPost){
@@ -129,6 +157,7 @@ router.post('/post', function(req,res){
         
         }else{
             res.json(insertedPost);
+            console.log(insertedPost);
 
         }
     })

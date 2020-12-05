@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -10,7 +11,12 @@ export class AppComponent {
   title = 'GamingShop';
 
 
-    constructor(public service :UserService ) { 
+
+    constructor(public service :UserService , private http:HttpClient) {  
+
 
 }
+
+
+
 }

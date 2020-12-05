@@ -1,33 +1,84 @@
 
 
-<h1> Add post</h1>
+<div class="container box">
 
-
-<form >
+<br><br><br>
+<h1 class="display-4" >Add post</h1>
+<form  #f="ngForm">
 
 <div class="form-group">
-    <label> title</label>
-    <input type="text" class="form-control"  name="title" [(ngModel)]="post.title">
+    <label> Title</label>
+    <input type="text" class="form-control"  placeholder=" your title ... "name="title" [(ngModel)]="post.title" #t="ngModel" 
+
+             pattern="[a-zA-Z]"
+             minlength="4"
+             maxlength="60"
+
+             required>
+
     </div>
+    <div  *ngIf="t.invalid && t.touched">
+    <p *ngIf="t.errors.required" class="text-danger">title required </p>
+    <p *ngIf="t.errors.minlength" class="text-danger"> 4 caracters min</p>
 
-
+    </div>
+   
+    
 
     <div class="form-group">
     <label> Category</label>
-    <input type="text" class="form-control"  name="category" [(ngModel)]="post.category">
-</div>
+    <input type="text" class="form-control"  placeholder=" your category ... " name="category" [(ngModel)]="post.category"  #c="ngModel"
+    pattern="[a-zA-Z]"
+    minlength="4"
+    maxlength="20"
 
+    required>
+</div>
+<div  *ngIf="c.invalid && c.touched">
+    <p *ngIf="c.errors.required" class="text-danger">category required </p>
+    <p *ngIf="c.errors.minlength" class="text-danger"> 4 caracters min</p>
+
+    </div>
+
+
+<div class="form-group">
+    <label class="d-flex"> Image</label>
+
+<input  type ="file"  id="file" name="image"  (change)="handle($event.target.files)">
+</div>
 
 
 <div class="form-group">
     <label> Description</label>
-    <input type="text" class="form-control"  name="description" [(ngModel)]="post.description">
+    <textarea type="text" class="form-control" placeholder="describe your post here ..."  name="description" [(ngModel)]="post.description"  #d="ngModel"
+    minlength="10"
+    maxlength="400"
+    required
+    ></textarea>
 </div>
+<div  *ngIf="d.invalid && d.touched">
+    <p *ngIf="d.errors.required" class="text-danger">description required </p>
+    <p *ngIf="d.errors.minlength" class="text-danger"> 10 caracters min</p>
+
+    </div>
+
+
+
 <div class="form-group">
-    <label> price</label>
-    <input type="number" class="form-control"  name="price" [(ngModel)]="post.price">
+    <label> Price</label>
+    <input type="number" class="form-control" placeholder="your price " name="price" [(ngModel)]="post.price" #p="ngModel"
+    
+    required >
 </div>
+
+<div  *ngIf="p.invalid && p.touched">
+    <p *ngIf="p.errors.required" class="text-danger">price required </p>
+
+    </div>
 
 
 <button type="submit" class="btn btn-primary" (click) = "save()" > save </button>
 </form>
+
+</div>
+

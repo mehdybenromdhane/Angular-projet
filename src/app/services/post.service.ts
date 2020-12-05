@@ -19,10 +19,19 @@ url="http://localhost:3000/api/post/";
     return this.http.get<Post[]>('http://localhost:3000/api/posts');
 }
 
-addPost( post: Post){
+addPost(post: FormData ){
 
-  return this.http.post(this.url, post);
+  return this.http.post(this.url,
+    post
+  
+  );
 }
+
+addPostFile( file: any){
+
+  return this.http.post(this.url, file);
+}
+
 
 updatePost (post : Post): Observable<Post>{
 
