@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../model/post';
 import { PostService } from '../services/post.service';
 
@@ -9,10 +9,10 @@ import { PostService } from '../services/post.service';
 })
 export class HomeComponent implements OnInit {
 
- selectedPost:Post;
-  postsList: Post[] ;
-  
+ /* selectedPost:Post;
+  postsList: Post[] ;*/
 
+postsList: Post[];
   constructor(private service:PostService) { }
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
       (data: Post[]) => this.postsList = data);
   }
 
-
+/*
   onSelectPost(post:any){
 
     this.selectedPost=post;
@@ -48,5 +48,5 @@ export class HomeComponent implements OnInit {
   );
   this.selectedPost=null;
 
-  }
+  }*/
 }

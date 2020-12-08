@@ -27,10 +27,7 @@ addPost(post: FormData ){
   );
 }
 
-addPostFile( file: any){
 
-  return this.http.post(this.url, file);
-}
 
 
 updatePost (post : Post): Observable<Post>{

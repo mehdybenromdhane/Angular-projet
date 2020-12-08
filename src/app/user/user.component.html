@@ -1,0 +1,55 @@
+
+<div class="breadcrumb-area bg-image section-ptb image-bg"  style="background-image: url(../../assets/fortnite.jpg)">
+    <div class="container">
+        <div class="breadcrumb">
+            <div class="row">
+                <div class="col">
+                    <h2>Servcie Details</h2>
+                    <!-- breadcrumb-list start -->
+                    <ul class="breadcrumb-list">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Service Details</li>
+                    </ul>
+                    <!-- breadcrumb-list end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="d-flex flex-column align-items-center center">
+        
+        <h1 class="display-4">WELCOME</h1>
+  <h2 class="display-4">Gaming Shop</h2>
+
+  
+</div>
+
+<main class="page-content">
+    
+    <!-- Start Service Style-->
+  
+    <div class="section-service bg-gray section-pt section-pb">
+        <div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-3">
+            <ul role="tablist" class="nav flex-column service-details-menu dashboard-list">
+          
+        <app-posts-list (SelectPost)="onSelectPost($event)" [posts] = "postsList"></app-posts-list>
+
+    </ul>
+    </div>
+
+
+                    <!-- Tab panes -->
+                  
+                    <div class="col-md-12 col-lg-9">
+                        <!-- Tab panes -->
+                     
+                  
+        <app-post-details *ngIf="selectedPost" [post]="selectedPost"  (deletePostEvent)="onDeleteEvent($event)" (updatePostEvent)="onUpdatePostEvent($event)"></app-post-details>
+    </div>
+                    </div>
+        </div>
+    </div>
+</main>

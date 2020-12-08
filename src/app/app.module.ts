@@ -12,7 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
-import { AddPostComponent } from './add-post/add-post.component'
+import { AddPostComponent } from './add-post/add-post.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DetailsComponent } from './details/details.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,9 @@ import { AddPostComponent } from './add-post/add-post.component'
     HomeComponent,
     PostsListComponent,
     PostDetailsComponent,
-    AddPostComponent
+    AddPostComponent,
+    PageNotFoundComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

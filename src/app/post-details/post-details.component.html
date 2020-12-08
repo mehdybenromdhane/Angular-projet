@@ -1,37 +1,54 @@
+<div class="service-details-lg-image">
 
-
-
-<div>
-
-    <form> 
-
-
+          <img  class="img-fluid   " src="../../assets/{{post.image}}">
+      </div>
+<br><br><br>
+<div class="form-inner-box-warp">
+    <div class="container">
+    <form >
         <div  *ngIf="editTitle"  class="form-group">
-
             <input type="text" class="form-control" name="title" required placeholder="title"
             [(ngModel)]="post.title">
         </div>
-<h3 *ngIf="!editTitle" (click)="onTitleClick()"> {{post.title}}</h3>
+        <div class="contact-title">
+            <div class="title-3">
+                <h3 *ngIf="!editTitle" (click)="onTitleClick()">{{post.title}}</h3>
+            </div>
+         </div>
+         
+        <div  *ngIf="editCategory"  class="form-group">
+            <input type="text" class="form-control" name="category" required placeholder="category"
+            [(ngModel)]="post.category">
+        </div> 
+        <span *ngIf="!editCategory" (click)="onCategoryClick()" class="badge badge-pill badge-success " style="font-size: 1rem;">{{post.category}}</span>
 
-        <div class="form-group">
+         <br><br>
+     
+
+        <div *ngIf="editDescription" class="form-group">
 
             <input type="text" class="form-control" name="description" required placeholder="description"
             [(ngModel)]="post.description">
         </div>
 
-           
-        <div class="form-group">
+        <p *ngIf="!editDescription" (click)="onDescClick()"> {{post.description}}</p>
+
+        <div  *ngIf="editPrice"  class="form-group">
 
             <input type="text" class="form-control" name="price" required placeholder="price"
             [(ngModel)]="post.price">
         </div>
+        <h4 *ngIf="!editPrice" (click)="onPriceClick()"> Price : {{post.price}} DT</h4>
 
+        <br><br>
+        <div class=" d-flex  justify-content-start "> 
         <button type="button" (click)="updatePost()" class="btn btn-primary">Update</button>
+   
+       &nbsp;    &nbsp;    &nbsp;    &nbsp;
         <button type="button" (click)="deletePost()" class="btn btn-secondary">Delete</button>
-
+    </div>
     </form>
-
-</div>
-
+</div></div>
 
 
+ 
