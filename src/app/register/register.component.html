@@ -1,48 +1,127 @@
 
 
-<h1> Register</h1>
 
 
-<form >
-<div class="form-group">
-<label> id</label>
-<input type="number"  class="form-control" name="id" [(ngModel)]="user.id">
-</div>
+<div class="container">
+     <div class="card login-card">
+       <div class="row no-gutters">
+         <div class="col-md-5">
+           <img src="../../assets/fortnite.jpg" alt="login" class="login-card-img">
+         </div>
+         <div class="col-md-7">
+           <div class="card-body">
+             <div class="brand-wrapper">
+               <img src="assets/images/logo.svg" alt="logo" class="logo">
+             </div>
+             <p class="login-card-description">Create your account</p>
+             <form [formGroup]= "userForm">
+                  
 
-<div class="form-group">
-    <label> Name</label>
-    <input type="text" class="form-control"  name="id" [(ngModel)]="user.name">
-    </div>
+                 <div class="form-group"> 
+                    <label for="name" class="sr-only">Name</label>
+                    <input type="text"   class="form-control"
+                     placeholder="Name" name="name"  formControlName="name">
+                     
+                  
+                  <div class="alert alert-danger" *ngIf="userForm.get('name').errors
+                  && userForm.controls['name'].touched">
+                    <div *ngIf="userForm.controls['name'].hasError('required')">
+                  Please enter your name                   
 
+               </div>
+                    <div *ngIf="userForm.controls['name'].hasError('minlength')">
+                      Minimum of 4 letter
+                    </div>
+                    <div *ngIf="userForm.controls['name'].hasError('maxlength')">
+                      Maximum of 25 letters            
+                            </div>
+                  </div>
+                  </div>
+                 <div class="form-group"> 
+                    <label for="username" class="sr-only">Username</label>
+                    <input type="text" name="username"  class="form-control"
+                     placeholder="Username"  formControlName="username">
+                     <div class="alert alert-danger" *ngIf="userForm.get('username').errors
+                     && userForm.controls['username'].touched">
+                       <div *ngIf="userForm.controls['username'].hasError('required')">
+                        Please enter your username                   
+                      </div>
+                       <div *ngIf="userForm.controls['username'].hasError('minlength')">
+                        Minimum of 3 letters
+                      </div>
+                       <div *ngIf="userForm.controls['username'].hasError('maxlength')">
+                        Maximum of 10 letters            
+                      </div>
+                     </div>
+                  </div>
+                  <div class="form-group"> 
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" name="email"  class="form-control"
+                     placeholder="email@exemple.com" name="email"  formControlName="email">
+                     <div class="alert alert-danger" *ngIf="userForm.get('email').errors
+                     && userForm.controls['email'].touched">
+                       <div *ngIf="userForm.controls['email'].hasError('required')">
+                        Please enter your email                   
+                       </div>
+                       <div *ngIf="userForm.controls['email'].hasError('pattern')">
+                          yourName@exemple.com                   </div>
+                       
+                     </div>
+                  </div>
+                 <div class="form-group mb-4">
+                   <label for="password" class="sr-only">Password</label>
+                   <input type="password" name="password" id="password" class="form-control"  name="password"  formControlName="password" placeholder="***********">
+                 </div>
 
- 
-    <div class="form-group">
-    <label> username</label>
-    <input type="text" class="form-control"  name="id" [(ngModel)]="user.lastname">
-</div>
+                 <div class="form-group"> 
+                  <label for="tel" class="sr-only">Tel</label>
+                  <input type="text" name="tel"  class="form-control"
+                   placeholder="Num tel " name="tel"  formControlName="tel">
+                   <div class="alert alert-danger" *ngIf="userForm.get('tel').errors
+                   && userForm.controls['tel'].touched">
+                     <div *ngIf="userForm.controls['tel'].hasError('required')">
+                        Please enter your num
+                     </div>
+                     <div *ngIf="userForm.controls['tel'].hasError('pattern')">
+                         Only numbers                    
+                      </div>
+                      <div *ngIf="userForm.controls['tel'].hasError('minlength')">
+                        8 numbers                
+                     </div>
+                     <div *ngIf="userForm.controls['tel'].hasError('maxlength')">
+                      8 numbers                
+                   </div>
+                     
+                   </div>
+                </div>
+                <div class="container d-flex justify-content-around"> 
+                  <div class="form-group ">
+                   <input class="form-check-input" type="radio"   name="role"  formControlName="role" id="exampleRadios1" value="Buyer" checked>
+                   <label class="form-check-label" for="exampleRadios1">
+                        Buyer
+                   </label>
+                 </div>
+                 <div class="form-group">
+                   <input class="form-check-label " type="radio"  name="role"  formControlName="role" id="exampleRadios2" value="Seller">
+                   <label class="form-check-label" for="exampleRadios2">
+                     Seller 
+                   </label> 
+                 </div>
+                 <div class="alert alert-danger" *ngIf="userForm.get('role').errors
+                 && userForm.controls['role'].touched">
+                   <div *ngIf="userForm.controls['role'].hasError('required')">
+                      Buyer or Seller ?
+                   </div>
+                   </div>
+              </div>
+                 <input name="login"  [disabled]="userForm.invalid" (click) = "save()" id="login" class="btn btn-block login-btn mb-4" type="button" value="Signup">
+               </form>
+               <nav class="login-card-footer-nav">
+                 <a href="#!">Terms of use.</a>
+                 <a href="#!">Privacy policy</a>
+               </nav>
+           </div>
+         </div>
+       </div>
+     </div></div>
 
-
-
-<div class="form-group">
-<label> Email</label>
-     <input type="text"  class="form-control"name="id" [(ngModel)]="user.email">
-</div>
-<div class="form-group">
-    <label> Password</label>
-         <input type="password"  class="form-control"name="id" [(ngModel)]="user.password">
-    </div>
-
-<div class="form-group">
-    <label> Email</label>
-         <input type="text"  class="form-control"name="id" [(ngModel)]="user.tel">
-    </div>
-    <div class="form-group">
-        <label> Email</label>
-             <input type="text"  class="form-control"name="id" [(ngModel)]="user.role">
-        </div>
-
-
-<a class="btn btn-primary" (click) = "save()" > Register </a>
-
-
-</form>

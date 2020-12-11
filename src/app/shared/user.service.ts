@@ -12,7 +12,7 @@ export class UserService {
 
  register_url="http://localhost:3000/api/register";
  login_url="http://localhost:3000/api/login";
-
+mail_url="http://localhost:3000/api/login";
 
   registerUser( user: User){
 
@@ -42,5 +42,9 @@ export class UserService {
     localStorage.removeItem('token');
     this.route.navigate([ '/login']);
      
+  }
+
+  sendEmail(url, data) {
+    return this.http.post(url, data);
   }
 }

@@ -1,2 +1,32 @@
 
-<h3>{{id}}</h3>
+  
+<div class="section-agency-benefit section-pt section-pb">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="agency-benefits">
+                    <div class="content">
+                        <div class="section-title title-2">
+                            <h2>{{post.title}} </h2>
+                        </div>
+
+                        <span  class="badge badge-pill badge-success " style="font-size: 1rem;">{{post.category}}</span>
+
+                        <p>{{post.description}}</p>
+
+                        <h3>Price: {{post.price}} DT </h3>
+                        <a href="#" class="btn contact-btn mt-30 btn-circle">CONTACT SELLER</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="agency-thumb">
+                    <div class="thumb">
+                        <img  class="img-fluid   " src="../../assets/{{post.image}}">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

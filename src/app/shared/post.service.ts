@@ -21,10 +21,7 @@ url="http://localhost:3000/api/post/";
 
 addPost(post: FormData ){
 
-  return this.http.post(this.url,
-    post
-  
-  );
+  return this.http.post(this.url,post);
 }
 
 
@@ -44,4 +41,9 @@ deletePost(post:Post){
 
 
 }
+
+getPostById(_id: number): Observable<Post> {
+  return this.http.get<Post>(this.url + _id);
+ }
+
 }

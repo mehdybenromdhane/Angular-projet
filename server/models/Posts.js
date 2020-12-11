@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { fileURLToPath } = require('url');
 const Schema = mongoose.Schema;
 const postsSchema = new  Schema({
 
@@ -8,7 +7,12 @@ const postsSchema = new  Schema({
 
     image:String,
     description:String,
-    price:Number
+    price:Number,
+   
+    date: {
+        type:Date,
+        default: Date.now
+    }
 });
 
-module.exports = mongoose.model('post',postsSchema,'posts'); 
+module.exports = mongoose.model('Post',postsSchema,'Posts'); 

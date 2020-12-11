@@ -1,17 +1,22 @@
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="hero-section section ">
 
     <div class="hero-slider hero-slider-one">
-        <div class="hero-slide-item d-flex align-items-center image-bg"  style="background-image: url(../../assets/fortnite.jpg); font-size: 100%; ">
+        <div class="hero-slide-item d-flex align-items-center image-bg"  style="background-image: url(../../assets/TheOrder_005_800.jpg); min-height: calc(100vh - 139.6px); font-size: 100%; ">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
                         
                         <div class="hero-content text-left">
                             <h5>We Provide The Best</h5>
-                            <h1>Security Service </h1>
-                        
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <a href="contact-us.html" class="btn">get appointment</a>
+                            <h1>Gaming Shop </h1>
+                
+                            <a routerLink="login" class="btn">Buy now</a>  &nbsp;
+                            <a routerLink="login" class="btn">Sell now</a>
+
                         </div>
                         
                     </div>
@@ -20,12 +25,9 @@
         </div>
         
         </div>
-    </div>
-
-
+    </div> 
 
     <main class="page-content">
-    
         <!-- Start Service Style-->
         <div class="section-service">
             <div class="container-fluid plr_-0">
@@ -36,11 +38,10 @@
                         <div class="row-service-wrap">
                             <div class="service text-left service-6 medical-service">
                                 <div class="icons">
-                                    <img src="assets/images/icon/service-01.png" alt="service icons">
+                                    <img src="../../assets/c-01.png" alt="service icons">
                                 </div>
                                 <div class="content">
-                                    <h4>Webcam Security</h4>    
-                                    <p>Loremfdft ut</p>
+                                    <h4>Sell Security</h4>    
                                 </div>
                             </div>
                         </div>
@@ -52,7 +53,7 @@
                         <div class="row-service-wrap">
                         <div class="service text-left service-6 medical-service service-bg-2">
                             <div class="icons">
-                                <img src="assets/images/icon/service-02.png" alt="service icons">
+                                <img src="../../assets/service-02.png" alt="service icons">
                             </div>
                             <div class="content">
                                 <h4>Security Guard</h4>
@@ -68,7 +69,7 @@
                        <div class="row-service-wrap">
                         <div class="service text-left service-6 medical-service">
                             <div class="icons">
-                                <img src="assets/images/icon/service-03.png" alt="service icons">
+                                <img src="../../assets/service-03.png" alt="service icons">
                             </div>
                             <div class="content">
                                 <h4>Motivated Guards</h4>
@@ -84,7 +85,7 @@
                        <div class="row-service-wrap">
                         <div class="service text-left service-6 medical-service service-bg-2">
                             <div class="icons">
-                                <img src="assets/images/icon/service-04.png" alt="service icons">
+                                <img src="../../assets/game-controller.png" alt="service icons">
                             </div>
                             <div class="content">
                                 <h4>24/7 Services</h4>
@@ -100,23 +101,45 @@
         </div>
         <!-- End Service Style-->
         <!-- Start Agency Benefits Area -->
+
+
+       
+<div class=" d-flex justify-content-end  py-4 px-4">
+        <div  class=" form-group has-search"> 
+            <span class="fa fa-search form-control-feedback"></span>
+        <input class="form-control  search " type="text" name="title" [(ngModel)]="title"   (ngModelChange)="Search()" placeholder="search">
+    </div>
+    </div>
         <div class="row">
                 
-            <div class="col-lg-4 col-md-6 col-12" *ngFor="let p of postsList">
-                <!-- Start Single Service -->
-                <div class="service text-center service-2 padding-none cleaning-service mb-30">
-                    <div class="thumb" >
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let p of postsList |paginate:{itemsPerPage:6,currentPage:p};">
+                <div class="team team-8 mb-30">
+                    <div class="thumb">
                         <a [routerLink]="['post',p._id]">
-                            <img  class="img-fluid   " src="../../assets/{{p.image}}">
+                            <img src="../../assets/{{p.image}}" alt="team img">
                         </a>
                     </div>
-                    <div class="content">
-                        <h4><a href="#">{{p.title}}</a></h4>
-                        <h6> Price : {{p.price}} DT</h6>
-                        <a class="readmore_btn btn-transparent" href="#">READ MORE</a>
+                    <div class="team-info">
+                        <div class="content">
+                            <h4><a [routerLink]="['post',p._id]">{{p.title }}</a></h4>
+                            <span > Price : {{p.price}} DT</span>
+
+                        </div>
+                        <a class="readmore_btn btn-transparent" [routerLink]="['post',p._id]">READ MORE</a>
+
                     </div>
                 </div>
+            </div>
+            
                 <!-- End Single Service -->
+
+                
+        <div class="container d-flex justify-content-center">
+            <pagination-controls (pageChange)= "p =$event"></pagination-controls>
+
+
+        </div>
             </div>
-            </div>
+
+            
     </main>

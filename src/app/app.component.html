@@ -56,21 +56,15 @@
                                       <li><a href="about.html">ABOUT</a></li>
                                       <li><a href="#">SERVICES</a>
                                           <ul class="sub-menu">
-                                              <li><a href="service.html">Service Page</a></li>
-                                              <li><a href="service-details.html">Service Details Page</a></li>
+                                              <li><a href="#">Service Page</a></li>
+                                              <li><a href="#">Service Details Page</a></li>
                                           </ul>
                                       </li>
-                                      <li><a routerLink="user">home</a></li>
-                                      <li><a href="#">BLOG</a>
-                                          <ul class="sub-menu">
-                                              <li><a href="blog.html">Blog page</a></li>
-                                              <li><a href="blog-details.html">Blog Details Page</a></li>
-                                          </ul>
-                                      </li>
-                                      <li><a href="contact-us.html">ddd</a></li>
-
-                                      <li><a href="contact-us.html">ddd</a></li>
-
+                                      <li><a routerLink="user">SELL</a></li>
+                                     
+                                     
+                                      
+                                      
                                   </ul>
                                 
                               </nav>
@@ -80,8 +74,10 @@
 
                       <div class="header-btn text-right ">
 
-                                  <a class="btn-circle btn-transparent btn"   *ngIf="!service.loggedIn()"   routerLink="login" >Login</a>
+                                  <a class="btn-circle btn-transparent btn"   *ngIf="!service.loggedIn()"   routerLink="home/login" >Login</a>
                                       </div>
+
+                                      &nbsp;
                               <div class="header-btn text-right ">
                                 <a class="btn-circle btn-transparent btn"  *ngIf="!service.loggedIn()"   routerLink="register">Register</a>
                             </div>
@@ -152,12 +148,23 @@
       </header>
       <!--// Header -->  
       
-  <router-outlet> </router-outlet>
-     
+
+
+
+
+
+
+  <router-outlet ></router-outlet> 
 
     
    
   
+
+
+
+
+
+
   
  
 

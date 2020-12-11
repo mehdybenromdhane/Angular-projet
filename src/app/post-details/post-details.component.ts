@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import { Post } from '../model/post';
-import { PostService } from '../services/post.service';
+import { PostService } from '../shared/post.service';
 
 @Component({
   selector: 'app-post-details',

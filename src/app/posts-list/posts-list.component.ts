@@ -1,6 +1,6 @@
 import { Component, Input, OnInit,EventEmitter, Output } from '@angular/core';
 import { Post } from '../model/post';
-import { PostService } from '../services/post.service';
+import { PostService } from '../shared/post.service';
 
 @Component({
   selector: 'app-posts-list',
@@ -11,6 +11,7 @@ import { PostService } from '../services/post.service';
 })
 export class PostsListComponent implements OnInit {
 
+  color=false;
 
 
  @Input()
@@ -31,9 +32,8 @@ postList: Post[];
   
 
   }
-
   onSelect(ps:Post){
-  
+    this.color=true;
     this.SelectPost.emit(ps);
     console.log(ps.title);
 

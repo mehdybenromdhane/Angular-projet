@@ -1,3 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css"; 
 @import "./css/style.css";
+
+@import '~ngx-toastr/toastr';
+.box{
+
+    max-width: 30%;
+    text-align: center;
+}
+
+body{
+
+    background-color: rgb(241, 241, 241);
+
+    width:100% !important ;
+}

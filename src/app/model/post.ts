@@ -5,4 +5,5 @@ export class Post{
      image:string;
      description:string;
      price:number;
+     date:Date;
 }

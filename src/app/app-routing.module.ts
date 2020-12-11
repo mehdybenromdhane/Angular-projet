@@ -18,9 +18,9 @@ import { DetailsComponent } from './details/details.component';
 const ROUTES:Routes = [
 
   {path: '' , redirectTo: '/home',pathMatch:'full'},
-  {path: 'home', component: HomeComponent },
+  {path: 'home', component: HomeComponent},
 
-  {path: 'user', component: UserComponent,canActivate: [AuthGuard]},
+  {path: 'user', component: UserComponent,canActivate: [AuthGuard] },
 
   {path: 'list', component: PostsListComponent},
   {path: 'add', component: AddPostComponent},
@@ -30,7 +30,7 @@ const ROUTES:Routes = [
 
 
   {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
+  {path: 'home/login', component: LoginComponent},
   {path : '**', component:PageNotFoundComponent}
   
 ]
