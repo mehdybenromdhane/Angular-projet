@@ -107,12 +107,12 @@
 <div class=" d-flex justify-content-end  py-4 px-4">
         <div  class=" form-group has-search"> 
             <span class="fa fa-search form-control-feedback"></span>
-        <input class="form-control  search " type="text" name="title" [(ngModel)]="title"   (ngModelChange)="Search()" placeholder="search">
+        <input class="form-control  search " type="text" name="price"   [(ngModel)]="title"   (ngModelChange)="Search()" placeholder="search">
     </div>
     </div>
         <div class="row">
                 
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let p of postsList |paginate:{itemsPerPage:6,currentPage:p};">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let p of postsList |paginate:{itemsPerPage:3,currentPage:p};">
                 <div class="team team-8 mb-30">
                     <div class="thumb">
                         <a [routerLink]="['post',p._id]">
@@ -123,11 +123,13 @@
                         <div class="content">
                             <h4><a [routerLink]="['post',p._id]">{{p.title }}</a></h4>
                             <span > Price : {{p.price}} DT</span>
-
                         </div>
                         <a class="readmore_btn btn-transparent" [routerLink]="['post',p._id]">READ MORE</a>
-
+                        <div class="d-flex justify-content-start px-3 py-2">
+                        <a href=""><i class="fa fa-calendar"></i> {{p.date | date}} </a>
                     </div>
+                    </div>
+
                 </div>
             </div>
             

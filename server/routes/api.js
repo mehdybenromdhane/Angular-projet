@@ -188,7 +188,7 @@ router.post('/post', upload.single('file'),function(req,res){
 
 router.put('/post/:id',function(req,res){
     console.log('update a post');
-    Posts.findByIdAndUpdate(req.params.id,
+    Post.findByIdAndUpdate(req.params.id,
       {  
              $set: {title: req.body.title, image: req.body.image, description:req.body.description, price: req.body.price}  
         }, 

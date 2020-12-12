@@ -8,10 +8,7 @@ import { UserService } from './shared/user.service';
   templateUrl: './app.component.html', 
   styleUrls: ['./app.component.css'],
 
-  animations:[
-    //fader,
-    //slider
-   ]
+  
 })
 export class AppComponent {
   title = 'GamingShop';

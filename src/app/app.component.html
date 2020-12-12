@@ -1,25 +1,13 @@
 
-      <!doctype html>
-      <html class="no-js" lang="en">
-      
-      <head>
-          <meta charset="utf-8">
-          <meta http-equiv="x-ua-compatible" content="ie=edge">
-          <title> Gaming Shop</title>
-          <meta name="description" content="">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <!-- Favicon -->
-          <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-          
+     
           <!-- CSS
         ============================================ -->
          
           <!-- Plugins CSS -->
         
           
-      </head>
-      
-      <body>
+     
+     
       
       <!-- Header -->
       <header class="header">
@@ -31,10 +19,10 @@
                       </div>
                       <div class="col-lg-6  col-md-6">
                           <ul class="socail-top">
-                              <li><a href="#"><i class="ti-facebook"></i></a></li>
-                              <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                              <li><a href="#"><i class="ti-vimeo-alt"></i></a></li>
-                              <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                           </ul>
                       </div>
                   </div>
@@ -44,7 +32,15 @@
               <div class="container">
                   <div class="row align-items-center">
                      
-                    
+                    <div class="col-lg-3 col-md-6 col-6">
+                        <div class="cuscol">
+                            <div class="logo">
+                                <a routerLink="home">
+                                    <img src="../assets/logo.png" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                       
                       <div class="col-lg-9 d-none d-lg-block">
                           <div class="menu-area d-flex align-items-center justify-content-end">
@@ -82,7 +78,7 @@
                                 <a class="btn-circle btn-transparent btn"  *ngIf="!service.loggedIn()"   routerLink="register">Register</a>
                             </div>
                             <a class="btn-circle btn-transparent btn"  *ngIf="service.loggedIn()"   routerLink="add">Add Post</a>
-                            <a class="btn-circle btn-transparent btn"  *ngIf="service.loggedIn()" (click)="service.logoutUser()"  routerLink="home">Logout</a>
+                          &nbsp;&nbsp;  <a class="btn-circle btn-transparent btn"  *ngIf="service.loggedIn()" (click)="service.logoutUser()"  routerLink="home">Logout</a>
 
                             
                           </div>
@@ -285,12 +281,9 @@
 
 
 
-</body> 
-
-
   
 
-</html>
+
 
 
 

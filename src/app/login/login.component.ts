@@ -45,13 +45,13 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('token', JSON.stringify(res))
     this.route.navigate(['/home'])
     this.notif.success('Success','Welcome',{
-      timeOut:1000,
+      timeOut:3000,
       progressBar:true,
       progressAnimation:'increasing'
     });
   },
     err =>     this.notif.error('Password or email invalide','Failed',{
-      timeOut:1000,
+      timeOut:3000,
       progressBar:true,
       progressAnimation:'increasing'
     })

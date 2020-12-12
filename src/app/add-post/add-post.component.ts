@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgModelGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Post } from '../model/post';
 import { PostService } from '../shared/post.service';
 
@@ -17,7 +18,7 @@ export class AddPostComponent implements OnInit {
 
   @ViewChild('fileInput',{static: false}) fileInput: ElementRef;
 
-  constructor(private service : PostService) { }
+  constructor(private service : PostService,private route: Router) { }
 
   ngOnInit(): void {
 
@@ -52,6 +53,7 @@ formData.append("price",this.post.price.toString());
       err => console.log(err)
     );
    
+    this.route.navigate(['/home'])
 
 
   }

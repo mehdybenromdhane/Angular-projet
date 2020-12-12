@@ -36,37 +36,6 @@ p:number = 1;
     }
 
     
-
-
   }
-
   
-/*
-  onSelectPost(post:any){
-
-    this.selectedPost=post;
-    console.log(this.selectedPost);
-  }
-
-  onUpdatePostEvent(post: any){
-    this.service.updatePost(post).subscribe(resUpdatedPost => post = resUpdatedPost);
-    this.selectedPost=null;
-  }
-
-  onDeleteEvent(post: any){
-    let postArray = this.postsList;
-  this.service.deletePost(post).subscribe(
-    resDeletedPost =>{
-      for (let i=0; i<postArray.length;i++ )
-      {
-        if(postArray[i]._id ===post._id)
-        {
-          postArray.splice(i,1);
-        }
-      }
-    }
-  );
-  this.selectedPost=null;
-
-  }*/
 }
